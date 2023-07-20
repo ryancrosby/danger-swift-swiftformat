@@ -19,21 +19,12 @@
       }
     },
     {
-      "identity" : "danger-swift-coverage",
+      "identity" : "komondor",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/f-meloni/danger-swift-coverage",
+      "location" : "https://github.com/shibapm/Komondor",
       "state" : {
-        "revision" : "6a21a6e595e2b13443428942ce128b3ba6b827ee",
-        "version" : "1.2.1"
-      }
-    },
-    {
-      "identity" : "danger-swift-xcodesummary",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/f-meloni/danger-swift-xcodesummary",
-      "state" : {
-        "revision" : "289d5136cead3d4b1eae509acc3f0b044252fc6c",
-        "version" : "1.2.1"
+        "revision" : "dedffeaf42a1b52bf072a9dc47afb35000a8b265",
+        "version" : "1.1.4"
       }
     },
     {
@@ -82,6 +73,15 @@
       }
     },
     {
+      "identity" : "shellout",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/JohnSundell/ShellOut.git",
+      "state" : {
+        "revision" : "e1577acf2b6e90086d01a6d5e2b8efdaae033568",
+        "version" : "2.3.0"
+      }
+    },
+    {
       "identity" : "sourcekitten",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/jpsim/SourceKitten.git",
@@ -115,6 +115,15 @@
       "state" : {
         "revision" : "59ed009d2c4a5a6b78f75a25679b6417ac040dcf",
         "version" : "509.0.0-swift-DEVELOPMENT-SNAPSHOT-2023-07-04-a"
+      }
+    },
+    {
+      "identity" : "swiftformat",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/nicklockwood/SwiftFormat",
+      "state" : {
+        "revision" : "a8b32a96ec569d5ceec207f19ff411aea5c878f7",
+        "version" : "0.51.12"
       }
     },
     {
