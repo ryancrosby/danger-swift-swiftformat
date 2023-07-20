@@ -1,12 +1,5 @@
-//
-//  File.swift
-//  
-//
-//  Created by Ryan Crosby on 7/17/23.
-//
-
-import Foundation
 @testable import DangerSwiftFormat
+import Foundation
 
 final class FakeCurrentPathProvider: CurrentPathProvider {
     var currentPath: String = ""

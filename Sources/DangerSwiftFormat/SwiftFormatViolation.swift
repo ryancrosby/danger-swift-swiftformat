@@ -1,10 +1,3 @@
-//
-//  File.swift
-//  
-//
-//  Created by Ryan Crosby on 7/15/23.
-//
-
 import Foundation
 
 public struct SwiftFormatViolation: Decodable {
@@ -24,7 +17,6 @@ public struct SwiftFormatViolation: Decodable {
         case file, line, reason
         case ruleID = "rule_id"
     }
-
 
     var messageText: String {
         reason + " (`\(ruleID)`)"

@@ -17,19 +17,17 @@ let package = Package(
         // Dev Dependencies
         .package(url: "https://github.com/f-meloni/Rocket", from: "1.0.0"), // dev
         .package(url: "https://github.com/nicklockwood/SwiftFormat", from: "0.35.0"), // dev
-        .package(url: "https://github.com/f-meloni/danger-swift-coverage", from: "1.0.0"), // dev
-        .package(url: "https://github.com/f-meloni/danger-swift-xcodesummary", from: "1.0.0"), // dev
+        .package(url: "https://github.com/shibapm/Komondor", from: "1.1.4"), // dev
     ],
     targets: [
         .target(name: "DangerDependencies", dependencies: [
             .product(name: "Danger", package: "swift"),
-            .product(name: "DangerSwiftCoverage", package: "danger-swift-coverage"),
-            .product(name: "DangerXCodeSummary", package: "danger-swift-xcodesummary"),
-            "DangerSwiftFormat"
+            "DangerSwiftFormat",
         ]), // dev
         .target(
             name: "DangerSwiftFormat",
-            dependencies: [.product(name: "Danger", package: "swift")]),
+            dependencies: [.product(name: "Danger", package: "swift")]
+        ),
         .testTarget(
             name: "DangerSwiftFormatTests",
             dependencies: ["DangerSwiftFormat", .product(name: "DangerFixtures", package: "swift")]
@@ -41,6 +39,13 @@ let package = Package(
     import PackageConfig
 
     let config = PackageConfiguration([
+        "komondor": [
+            "pre-push": "swift test",
+            "pre-commit": [
+                "swift run swiftformat .",
+                "git add .",
+            ],
+        ],
         "rocket": [
             "pre_release_checks": [
                 "clean_git",

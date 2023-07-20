@@ -106,7 +106,7 @@ extension SwiftFormat {
         case let .modifiedAndCreatedFiles(directory):
             // Gathers modified+created files, invokes SwiftLint on each, and posts collected errors+warnings to Danger.
             var files = (danger.git.createdFiles + danger.git.modifiedFiles)
-            if let directory = directory {
+            if let directory {
                 files = files.filter { $0.hasPrefix(directory) }
             }
 
@@ -128,7 +128,6 @@ extension SwiftFormat {
                                    outputFilePath: outputFilePath,
                                    failAction: failAction,
                                    readFile: readFile)
-
         }
 
         guard !violations.isEmpty else {
@@ -158,7 +157,7 @@ extension SwiftFormat {
     ) -> [SwiftFormatViolation] {
         var arguments = arguments
 
-        if let directory = directory {
+        if let directory {
             arguments.append("--path \"\(directory)\"")
         } else {
             arguments.append(".")
@@ -294,7 +293,7 @@ extension SwiftFormat {
     }
 }
 
-private extension Array where Element == SwiftFormatViolation {
+private extension [SwiftFormatViolation] {
     func updatingForCurrentPathProvider(_ currentPathProvider: CurrentPathProvider, severity: SwiftFormatViolation.Severity) -> [Element] {
         let currentPath = currentPathProvider.currentPath
         return map { violation -> SwiftFormatViolation in
